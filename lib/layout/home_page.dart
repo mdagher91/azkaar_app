@@ -1,4 +1,5 @@
 import 'package:azkaar_app/constants/color.dart';
+import 'package:azkaar_app/widgets/azkar_item.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,18 +12,18 @@ class HomePage extends StatelessWidget {
         title: Text('اذكار', style: TextStyle(color: Colors.white)),
         backgroundColor: defaultColor,
       ),
-
-      body: Center(
-        child: Column(
-          children: [
-            Card(
-              color: Colors.blueGrey,
-              clipBehavior: Clip.antiAlias,
-              key: key,
-              elevation: 2,
-            ),
-          ],
-        ),
+      body: PageView(
+        children: [
+          Column(
+            children: [
+              SizedBox(height: 15),
+              AzkarItem(),
+              AzkarItem(),
+              AzkarItem(),
+              AzkarItem(),
+            ],
+          ),
+        ],
       ),
     );
   }
