@@ -1,5 +1,6 @@
 import 'package:azkaar_app/constants/color.dart';
 import 'package:azkaar_app/widgets/azkar_item.dart';
+import 'package:azkaar_app/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,11 +17,10 @@ class HomePage extends StatelessWidget {
         children: [
           Column(
             children: [
-              SizedBox(height: 15),
-              AzkarItem(),
-              AzkarItem(),
-              AzkarItem(),
-              AzkarItem(),
+              Spacer(),
+              CustomButton(text: 'أذكــار الــصـــباح', onPressed: () {}),
+              CustomButton(text: 'أذكــار الــمـسـاء', onPressed: () {}),
+              Spacer(),
             ],
           ),
         ],
