@@ -1,4 +1,5 @@
 import 'package:azkaar_app/layout/home_page.dart';
+import 'package:azkaar_app/models/size_config.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       theme: ThemeData(),
-      home: const HomePage(),
+      home: const SizeConfigInit(child: HomePage()),
     );
+  }
+}
+
+class SizeConfigInit extends StatelessWidget {
+  final Widget child;
+  const SizeConfigInit({super.key, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    SizeConfig().init(context);
+    return child;
   }
 }
