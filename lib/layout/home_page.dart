@@ -4,9 +4,15 @@ import 'package:azkaar_app/widgets/azkar_item.dart';
 import 'package:azkaar_app/shared/componentes/custom_button.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  HomePageState createState() => HomePageState();
+}
+
+class HomePageState extends State<HomePage> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,23 +51,25 @@ class HomePage extends StatelessWidget {
                     onPressed: () {},
                   ),
                   SizedBox(width: 15),
-
                   CustomButton(
                     text: 'جوامـع الـكلـم',
-                    icon: null,
+                    icon: Icons.menu_book_rounded,
                     onPressed: () {},
                   ),
                 ],
               ),
-
               Spacer(),
             ],
           ),
         ],
       ),
       bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: 0,
-        onTap: (int value) {},
+        currentIndex: selectedIndex,
+        onTap: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
       ),
     );
   }
