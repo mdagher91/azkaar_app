@@ -1,7 +1,7 @@
 import 'package:azkaar_app/constants/color.dart';
 import 'package:azkaar_app/shared/componentes/bottom_nav_bar.dart';
-import 'package:azkaar_app/widgets/azkar_item.dart';
 import 'package:azkaar_app/shared/componentes/custom_button.dart';
+import 'package:azkaar_app/widgets/azkar_alsabah.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,7 +17,7 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text('اذكار', style: TextStyle(color: Colors.white)),
         ),
         backgroundColor: defaultColor,
@@ -26,7 +26,7 @@ class HomePageState extends State<HomePage> {
         children: [
           Column(
             children: [
-              Spacer(),
+              const Spacer(),
               Row(
                 children: [
                   CustomButton(
@@ -34,15 +34,22 @@ class HomePageState extends State<HomePage> {
                     icon: Icons.nights_stay_outlined,
                     onPressed: () {},
                   ),
-                  SizedBox(width: 15),
+                  const SizedBox(width: 15),
                   CustomButton(
                     text: 'أذكــار الــصـــباح',
                     icon: Icons.sunny,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AzkarAlsabah(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
-              SizedBox(width: 15),
+              const SizedBox(width: 15),
               Row(
                 children: [
                   CustomButton(
@@ -50,7 +57,7 @@ class HomePageState extends State<HomePage> {
                     icon: Icons.bed_rounded,
                     onPressed: () {},
                   ),
-                  SizedBox(width: 15),
+                  const SizedBox(width: 15),
                   CustomButton(
                     text: 'جوامـع الـكلـم',
                     icon: Icons.menu_book_rounded,
@@ -58,7 +65,7 @@ class HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ],
