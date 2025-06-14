@@ -1,7 +1,7 @@
 import 'package:azkaar_app/constants/color.dart';
 import 'package:azkaar_app/shared/componentes/bottom_nav_bar.dart';
 import 'package:azkaar_app/shared/componentes/custom_button.dart';
-import 'package:azkaar_app/widgets/azkar_alsabah.dart';
+import 'package:azkaar_app/modules/azkar_alsabah.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -69,14 +69,6 @@ class HomePageState extends State<HomePage> {
             ],
           ),
         ],
-      ),
-      bottomNavigationBar: CustomBottomNavBar(
-        currentIndex: selectedIndex,
-        onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-        },
       ),
     );
   }
